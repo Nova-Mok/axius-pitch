@@ -152,7 +152,29 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0; font
 .block-mock .actions{margin-top:16px; display:flex; gap:10px;}
 .policy-note{text-align:center; font-size:12.5px; color:var(--text-faint); max-width:480px; margin:20px auto 0;}
 
-/* ---- slide 5: setup ---- */
+/* ---- slide 5: AI observability ---- */
+#observability{background:var(--bg)}
+#observability h2{font-size:clamp(28px,4vw,42px); text-align:center; margin-bottom:10px;}
+#observability .lead{text-align:center; color:var(--text-muted); font-size:16px; max-width:620px; margin:0 auto 36px;}
+.obs-mock{max-width:560px; margin:0 auto; border:1px solid var(--border); background:var(--surface); border-radius:14px; padding:20px 22px; text-align:left;}
+.obs-head{font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--text-faint);}
+.obs-sub{font-size:14px; color:var(--text-muted); margin:8px 0 18px;}
+.obs-sub .v{color:var(--accent-ink); font-weight:600; font-family:'JetBrains Mono',monospace;}
+.obs-sub .v2{color:var(--text); font-weight:600; font-family:'JetBrains Mono',monospace;}
+.obs-bars{display:flex; flex-direction:column; gap:10px;}
+.obs-bar{display:grid; grid-template-columns:120px 1fr 70px; align-items:center; gap:10px;}
+.obs-label{font-size:12px; color:var(--text-muted); font-family:'JetBrains Mono',monospace;}
+.obs-track{height:8px; border-radius:100px; background:var(--border-soft); overflow:hidden;}
+.obs-fill{height:100%; background:var(--accent); border-radius:100px;}
+.obs-val{font-size:11.5px; color:var(--text-faint); text-align:right; font-family:'JetBrains Mono',monospace;}
+.obs-recent{margin-top:18px; border-top:1px solid var(--border); padding-top:14px;}
+.obs-recent-t{font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.06em; color:var(--text-faint); margin-bottom:8px;}
+.obs-row{display:flex; justify-content:space-between; font-size:12.5px; color:var(--text); padding:5px 0; border-bottom:1px solid var(--border-soft);}
+.obs-row:last-child{border-bottom:none}
+.obs-time{color:var(--text-faint); font-family:'JetBrains Mono',monospace; font-size:11px;}
+@media (max-width:560px){.obs-bar{grid-template-columns:90px 1fr 50px}}
+
+/* ---- slide 6: setup ---- */
 #setup{background:var(--bg-b)}
 #setup h2{font-size:clamp(28px,4vw,42px); text-align:center; margin-bottom:10px;}
 #setup .lead{text-align:center; color:var(--text-muted); margin-bottom:44px;}
@@ -170,7 +192,7 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0; font
 .timeline .t{font-size:13.5px; font-weight:600;}
 .timeline .s{font-size:11.5px; color:var(--text-faint); margin-top:3px; font-family:'JetBrains Mono',monospace;}
 
-/* ---- slide 6: use cases ---- */
+/* ---- slide 7: use cases ---- */
 #usecases{background:var(--bg-c)}
 #usecases h2{font-size:clamp(28px,4vw,42px); text-align:center; margin-bottom:10px;}
 #usecases .lead{text-align:center; color:var(--text-muted); margin-bottom:40px;}
@@ -199,7 +221,7 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0; font
 .uc-grid.reveal.in .uc:nth-child(8){transition-delay:.22s}
 .uc-grid.reveal.in .uc:nth-child(9){transition-delay:.25s}
 
-/* ---- slide 7: close ---- */
+/* ---- slide 8: close ---- */
 #close{background:radial-gradient(ellipse 900px 500px at 50% 80%, var(--accent-soft), transparent 70%), var(--bg); border-bottom:none;}
 #close h2{font-size:clamp(30px,5vw,50px); text-align:center; max-width:680px; margin:0 auto;}
 #close .lead{text-align:center; color:var(--text-muted); font-size:17px; margin:18px auto 0; max-width:520px;}
@@ -260,9 +282,10 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0; font
   <a href="#problem" data-i="1"></a>
   <a href="#solution" data-i="2"></a>
   <a href="#policy" data-i="3"></a>
-  <a href="#setup" data-i="4"></a>
-  <a href="#usecases" data-i="5"></a>
-  <a href="#close" data-i="6"></a>
+  <a href="#observability" data-i="4"></a>
+  <a href="#setup" data-i="5"></a>
+  <a href="#usecases" data-i="6"></a>
+  <a href="#close" data-i="7"></a>
 </nav>
 
 <section id="hook" class="slide center">
@@ -355,9 +378,33 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0; font
   </div>
 </section>
 
+<section id="observability" class="slide center">
+  <div class="slide-inner">
+    <div class="eyebrow" style="justify-content:center"><span class="n">04</span> AI observability</div>
+    <h2>Not just security. Full visibility into what it's costing you.</h2>
+    <p class="lead">Every model call your agent makes is already captured — AISEC0 rolls it up into usage you can act on, with zero extra instrumentation.</p>
+    <div class="obs-mock reveal">
+      <div class="obs-head">AI model activity</div>
+      <p class="obs-sub"><span class="v" data-count="1284902">0</span> tokens used in total, <span class="v2" data-count="812340">0</span> sent, <span class="v2" data-count="472562">0</span> returned.</p>
+      <div class="obs-bars">
+        <div class="obs-bar"><span class="obs-label">gpt-4o-mini</span><div class="obs-track"><div class="obs-fill" style="width:82%"></div></div><span class="obs-val">612,004</span></div>
+        <div class="obs-bar"><span class="obs-label">claude-3-5-sonnet</span><div class="obs-track"><div class="obs-fill" style="width:54%"></div></div><span class="obs-val">401,220</span></div>
+        <div class="obs-bar"><span class="obs-label">gpt-4o</span><div class="obs-track"><div class="obs-fill" style="width:29%"></div></div><span class="obs-val">271,678</span></div>
+      </div>
+      <div class="obs-recent">
+        <div class="obs-recent-t">RECENT CALLS</div>
+        <div class="obs-row"><span>Called gpt-4o-mini</span><span class="obs-time">just now</span></div>
+        <div class="obs-row"><span>Called claude-3-5-sonnet</span><span class="obs-time">12s ago</span></div>
+        <div class="obs-row"><span>Called gpt-4o-mini</span><span class="obs-time">40s ago</span></div>
+      </div>
+    </div>
+    <p class="policy-note">The same view every agent gets automatically — model name, token counts, recent calls — no separate SDK or usage dashboard to wire up.</p>
+  </div>
+</section>
+
 <section id="setup" class="slide center">
   <div class="slide-inner">
-    <div class="eyebrow" style="justify-content:center"><span class="n">04</span> Setup</div>
+    <div class="eyebrow" style="justify-content:center"><span class="n">05</span> Setup</div>
     <h2>Live in one command.</h2>
     <p class="lead">No SDK, no code change, no maintenance window.</p>
     <div class="term reveal"><span class="p">$</span> curl -fsSL api.aisec0.com/install.sh | sh</div>
@@ -371,7 +418,7 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0; font
 
 <section id="usecases" class="slide">
   <div class="slide-inner" style="max-width:1000px">
-    <div class="eyebrow" style="justify-content:center"><span class="n">05</span> Use cases</div>
+    <div class="eyebrow" style="justify-content:center"><span class="n">06</span> Use cases</div>
     <h2>All 9 real checks — not a roadmap</h2>
     <p class="lead">Every one of these runs today, on every event ingested.</p>
     <div class="uc-grid reveal">
@@ -426,7 +473,7 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0; font
 
 <section id="close" class="slide center">
   <div class="slide-inner">
-    <div class="eyebrow" style="justify-content:center"><span class="n">06</span> Bottom line</div>
+    <div class="eyebrow" style="justify-content:center"><span class="n">07</span> Bottom line</div>
     <h2>Ship the agent. Watch it too.</h2>
     <p class="lead">One install command, zero code changes, and every prompt, tool call, and connection your support agent makes — accounted for, and blocked when your policy says so.</p>
     <div class="stats reveal">
@@ -493,40 +540,41 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0; font
     reveals.forEach(function(e){ rio.observe(e); });
   }
 
-  var statsEl = document.querySelector('.stats');
-  var counters = Array.prototype.slice.call(document.querySelectorAll('.stat .v[data-count]'));
-  if (statsEl && counters.length && 'IntersectionObserver' in window) {
-    var done = false;
+  // Every [data-count] element counts up independently the moment it
+  // scrolls into view — covers both the close-slide stats and the AI
+  // observability card's token totals.
+  var counters = Array.prototype.slice.call(document.querySelectorAll('[data-count]'));
+  if (counters.length && 'IntersectionObserver' in window) {
     var cio = new IntersectionObserver(function(entries, obs){
       entries.forEach(function(e){
-        if (e.isIntersecting && !done) {
-          done = true;
-          counters.forEach(function(c){
-            var target = parseInt(c.getAttribute('data-count'), 10) || 0;
-            var suffix = c.getAttribute('data-suffix') || '';
-            var start = null;
-            var duration = 800;
-            function step(ts){
-              if (!start) start = ts;
-              var p = Math.min((ts - start) / duration, 1);
-              c.textContent = Math.round(p * target) + suffix;
-              if (p < 1) requestAnimationFrame(step);
-            }
-            requestAnimationFrame(step);
-          });
-          obs.unobserve(statsEl);
+        if (!e.isIntersecting) return;
+        var c = e.target;
+        var target = parseInt(c.getAttribute('data-count'), 10) || 0;
+        var suffix = c.getAttribute('data-suffix') || '';
+        var start = null;
+        var duration = 900;
+        function step(ts){
+          if (!start) start = ts;
+          var p = Math.min((ts - start) / duration, 1);
+          c.textContent = Math.round(p * target).toLocaleString() + suffix;
+          if (p < 1) requestAnimationFrame(step);
         }
+        requestAnimationFrame(step);
+        obs.unobserve(c);
       });
     }, { threshold: 0.4 });
-    cio.observe(statsEl);
+    counters.forEach(function(c){ cio.observe(c); });
   }
 })();
 
-/* live demo modal — three real scenarios pulled straight from the
+/* live demo modal — four real scenarios pulled straight from the
    product's own detectors and policy engine (see apps/api/internal/api/
    security.go and policy_handlers.go): a "flagged" outcome when nothing
    overrides the default, and a "blocked" outcome for the categories a
-   security team would actually configure to block. */
+   security team would actually configure to block. Field labels
+   ("API Credential", "Sensitive File Access", "Suspicious Network
+   Connection") match blocked-request-banner.tsx's own CATEGORY_LABELS
+   verbatim, not invented copy. */
 (function(){
   var SCENARIOS = [
     {
@@ -541,14 +589,25 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0; font
     },
     {
       key: 'credential',
-      tab: 'Credential leak',
-      prefix: 'agent response>',
-      typed: '...sure, here’s the key you gave me earlier: sk_live_51JzT9k...',
+      tab: 'Customer pastes a key',
+      prefix: 'customer>',
+      typed: 'here’s my key so you can look up my account: sk_live_51JzT9k...',
       outcome: 'block',
       title: 'Request blocked',
       body: 'support-agent-01 attempted an action your security policy blocked.',
       sev: 'BLOCKED',
       fields: { Agent: 'support-agent-01', 'Data detected': 'API Credential', Destination: 'any', Policy: 'Block credential leaks' }
+    },
+    {
+      key: 'sensitive-file',
+      tab: 'Sensitive file access',
+      prefix: 'syscall>',
+      typed: 'open("/home/agent/.ssh/id_rsa", O_RDONLY)',
+      outcome: 'block',
+      title: 'Request blocked',
+      body: 'support-agent-01 attempted an action your security policy blocked.',
+      sev: 'BLOCKED',
+      fields: { Agent: 'support-agent-01', 'Data detected': 'Sensitive File Access', Destination: 'any', Policy: 'Block sensitive file access' }
     },
     {
       key: 'network',
@@ -594,7 +653,10 @@ h1,h2,h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0; font
     clearTimeout(typing);
     typedEl.textContent = '';
     caretEl.style.display = '';
-    alertEl.classList.remove('show');
+    alertEl.classList.remove('show', 'is-block');
+    sevEl.textContent = '';
+    titleEl.textContent = '';
+    bodyEl.textContent = '';
     resolveBtn.hidden = false;
     investigateBtn.hidden = true;
     exceptionBtn.hidden = true;
